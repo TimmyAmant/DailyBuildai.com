@@ -6,25 +6,25 @@
   <title>DailyBuiltAI — AI-Built Websites</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --bg: #f5f2ed;
-      --paper: #faf8f5;
-      --ink: #1a1814;
-      --ink-muted: #6b6560;
-      --accent: #c25b4c;
-      --accent-soft: #e8d5d2;
-      --card-bg: #ffffff;
-      --shadow: 0 2px 12px rgba(26, 24, 20, 0.06);
-      --shadow-hover: 0 8px 32px rgba(26, 24, 20, 0.12);
+      --bg: #0d1117;
+      --panel: #161b22;
+      --text: #e6edf3;
+      --text-dim: #8b949e;
+      --accent: #58a6ff;
+      --accent-green: #3fb950;
+      --border: #30363d;
+      --shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+      --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.4);
     }
     body {
       min-height: 100vh;
       background: var(--bg);
-      color: var(--ink);
-      font-family: 'Source Sans 3', sans-serif;
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
       line-height: 1.6;
     }
     header {
@@ -32,8 +32,8 @@
       top: 0;
       z-index: 100;
       padding: 1.5rem 2rem;
-      background: var(--paper);
-      border-bottom: 2px solid var(--ink);
+      background: var(--panel);
+      border-bottom: 2px solid var(--border);
     }
     .header-inner {
       max-width: 1100px;
@@ -43,11 +43,11 @@
       justify-content: space-between;
     }
     .logo {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Libre Baskerville', serif;
       font-weight: 700;
       font-size: 1.5rem;
       font-style: italic;
-      color: var(--ink);
+      color: var(--text);
       text-decoration: none;
       letter-spacing: -0.02em;
     }
@@ -56,7 +56,7 @@
     nav a {
       font-size: 0.9rem;
       font-weight: 600;
-      color: var(--ink-muted);
+      color: var(--text-dim);
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -81,7 +81,7 @@
       margin-bottom: 0.75rem;
     }
     .hero h1 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Libre Baskerville', serif;
       font-weight: 500;
       font-size: clamp(2.25rem, 5vw, 3.5rem);
       line-height: 1.2;
@@ -90,7 +90,7 @@
     }
     .hero p {
       font-size: 1.1rem;
-      color: var(--ink-muted);
+      color: var(--text-dim);
     }
     .projects {
       display: flex;
@@ -99,8 +99,8 @@
     }
     .project-card {
       display: block;
-      background: var(--card-bg);
-      border: 2px solid var(--ink);
+      background: var(--panel);
+      border: 2px solid var(--border);
       padding: 2rem 2.5rem;
       text-decoration: none;
       color: inherit;
@@ -132,7 +132,7 @@
       margin-bottom: 0.75rem;
     }
     .project-title {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Libre Baskerville', serif;
       font-size: 1.35rem;
       font-weight: 500;
     }
@@ -142,14 +142,14 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: var(--ink-muted);
-      background: var(--accent-soft);
+      color: var(--text-dim);
+      background: rgba(88, 166, 255, 0.15);
       padding: 0.25rem 0.6rem;
       flex-shrink: 0;
     }
     .project-description {
       font-size: 0.95rem;
-      color: var(--ink-muted);
+      color: var(--text-dim);
       line-height: 1.6;
       max-width: 48ch;
     }
@@ -165,15 +165,15 @@
     .empty-state {
       padding: 3rem 2rem;
       text-align: center;
-      color: var(--ink-muted);
+      color: var(--text-dim);
       font-size: 1rem;
     }
     footer {
       padding: 2rem;
       text-align: center;
       font-size: 0.8rem;
-      color: var(--ink-muted);
-      border-top: 1px solid rgba(26, 24, 20, 0.1);
+      color: var(--text-dim);
+      border-top: 1px solid var(--border);
     }
     footer a {
       color: var(--accent);
@@ -194,7 +194,7 @@
       <a href="index.html" class="logo">DailyBuiltAI</a>
       <nav>
         <a href="index.html" class="active">Home</a>
-        <a href="contact.html">Contact</a>
+        <a href="mailto:contact@dailybuildai.com">Contact</a>
       </nav>
     </div>
   </header>

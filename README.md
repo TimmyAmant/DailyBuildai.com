@@ -14,7 +14,7 @@ A growing collection of websites built with AI assistance. Each project is craft
 
 | Project | Description |
 |---------|-------------|
-| **[Random Quote Generator](./Day%201/index.html)** | A quote generator that fetches inspirational quotes from the [Quotable API](https://quotable.io). Features a developer-inspired dark theme, serif typography for quotes, and a fallback list of quotes when the API is unavailable. Built with vanilla JavaScript. |
+| **[Random Quote Generator](./Day%201/index.html)** | A quote generator with a curated collection of inspirational quotes from around the web. Features a developer-inspired dark theme and serif typography. Built with vanilla JavaScript. |
 
 ## Project structure
 
@@ -32,7 +32,7 @@ DailyBuildai.com/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/DailyBuildai.com.git
+   git clone https://github.com/TimmyAmant/DailyBuildai.com.git
    cd DailyBuildai.com
    ```
 
@@ -59,7 +59,7 @@ DailyBuildai.com/
      title: 'Your Project Name',
      description: 'What it does...',
      url: './Day 2/index.html',
-     githubUrl: 'https://github.com/yourusername/your-repo',
+     githubUrl: 'https://github.com/TimmyAmant/DailyBuildai.com',
      screenshot: null,
    }
    ```

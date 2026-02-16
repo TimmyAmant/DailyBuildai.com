@@ -3,9 +3,9 @@ const projects = [
   {
     id: 'day1',
     title: 'Random Quote Generator',
-    description: 'A minimalist quote generator that fetches inspirational quotes from an API with elegant typography and a warm, refined aesthetic. Built with vanilla JavaScript.',
+    description: 'A minimalist quote generator with a curated collection of inspirational quotes from around the web. Elegant typography and a developer-inspired dark theme. Built with vanilla JavaScript.',
     url: './Day 1/index.html',
-    githubUrl: 'https://github.com/yourusername/dailybuiltai-day1',
+    githubUrl: 'https://github.com/TimmyAmant/DailyBuildai.com/tree/main/Day%201',
     screenshot: null, // Add path like 'screenshots/day1.png' when you have one
   },
   // Add more projects as you build them:
@@ -14,7 +14,7 @@ const projects = [
   //   title: 'Project Name',
   //   description: 'What it does...',
   //   url: './Day 2/index.html',
-  //   githubUrl: 'https://github.com/yourusername/repo',
+  //   githubUrl: 'https://github.com/TimmyAmant/DailyBuildai.com',
   //   screenshot: 'screenshots/day2.png',
   // },
 ];
