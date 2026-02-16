@@ -14,7 +14,7 @@ A growing collection of websites built with AI assistance. Each project is craft
 
 | Project | Description |
 |---------|-------------|
-| **[Random Quote Generator](./Day%201/index.html)** | A quote generator with a curated collection of inspirational quotes from around the web. Features a developer-inspired dark theme and serif typography. Built with vanilla JavaScript. |
+| **[Random Quote Generator](./Day1/index.html)** | A quote generator with a curated collection of inspirational quotes from around the web. Features a developer-inspired dark theme and serif typography. Built with vanilla JavaScript. |
 
 ## Project structure
 
@@ -23,7 +23,7 @@ DailyBuildai.com/
 ├── index.html              # Homepage – lists all projects
 ├── projects.js             # Project metadata (titles, descriptions, URLs)
 ├── README.md               # This file
-└── Day 1/                  # Project: Random Quote Generator
+└── Day1/                   # Project: Random Quote Generator
     ├── index.html          # Quote generator page
     └── quotes.js           # Fallback quotes when API is offline
 ```
@@ -49,7 +49,7 @@ DailyBuildai.com/
 
 ## Adding new projects
 
-1. Create a new folder for your project (e.g. `Day 2/`).
+1. Create a new folder for your project (e.g. `Day2/`).
 2. Add an `index.html` (and any JS/CSS) for the project.
 3. Register it in `projects.js`:
 
@@ -58,7 +58,7 @@ DailyBuildai.com/
      id: 'day2',
      title: 'Your Project Name',
      description: 'What it does...',
-     url: './Day 2/index.html',
+     url: './Day2/index.html',
      githubUrl: 'https://github.com/TimmyAmant/DailyBuildai.com',
      screenshot: null,
    }
