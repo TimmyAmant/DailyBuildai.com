@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0f0e0c;
+      --surface: #1a1816;
+      --text: #e8e4df;
+      --text-muted: #9a9489;
+      --accent: #e8a54b;
+      --accent-dim: rgba(232, 165, 75, 0.3);
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background-image: 
+        radial-gradient(ellipse 80% 50% at 50% 0%, var(--accent-dim) 0%, transparent 50%),
+        var(--bg);
+    }
+
+    .made-with {
+      margin-top: auto;
+      padding-top: 2rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .made-with a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .made-with a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 640px;
+      width: 100%;
+      text-align: center;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 0.9rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+    }
+
+    .quote-block {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 3rem 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      width: 100%;
+      text-align: center;
+    }
+
+    .quote-block::before {
+      content: '"';
+      position: absolute;
+      top: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      color: var(--accent);
+      opacity: 0.4;
+      line-height: 1;
+    }
+
+    .quote-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .quote-author {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-align: center;
+    }
+
+    .quote-author::before {
+      content: '— ';
+      color: var(--text-muted);
+    }
+
+    button {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      background: var(--accent);
+      color: var(--bg);
+      transform: translateY(-2px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .error {
+      color: #c75c5c;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Quote of the Moment</h1>
+    <div class="quote-block">
+      <p class="quote-text" id="quote-text">Loading...</p>
+      <p class="quote-author" id="quote-author"></p>
+    </div>
+    <button id="new-quote">New Quote</button>
+    <p class="error" id="error" style="display: none;"></p>
+  </main>
+
+  <footer class="made-with">Made with AI and <a href="https://cursor.com" target="_blank" rel="noopener">Cursor</a></footer>
+
+  <script src="quotes.js"></script>
+  <script>
+    const quoteText = document.getElementById('quote-text');
+    const quoteAuthor = document.getElementById('quote-author');
+    const newQuoteBtn = document.getElementById('new-quote');
+    const errorEl = document.getElementById('error');
+
+    function showQuote(content, author) {
+      quoteText.textContent = content;
+      quoteAuthor.textContent = author;
+      quoteText.classList.remove('fade-in');
+      void quoteText.offsetWidth;
+      quoteText.classList.add('fade-in');
+    }
+
+    function getRandomFallback() {
+      return fallbackQuotes[Math.floor(Math.random() * fallbackQuotes.length)];
+    }
+
+    async function fetchQuote() {
+      newQuoteBtn.disabled = true;
+      errorEl.style.display = 'none';
+
+      try {
+        const res = await fetch('https://api.quotable.io/random');
+        if (!res.ok) throw new Error('API error');
+        const data = await res.json();
+        showQuote(data.content, data.author);
+      } catch (err) {
+        const fallback = getRandomFallback();
+        showQuote(fallback.content, fallback.author);
+      } finally {
+        newQuoteBtn.disabled = false;
+      }
+    }
+
+    newQuoteBtn.addEventListener('click', fetchQuote);
+    fetchQuote();
+  </script>
+</body>
+</html>
