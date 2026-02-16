@@ -14,7 +14,7 @@ A growing collection of websites built with AI assistance. Each project is craft
 
 | Project | Description |
 |---------|-------------|
-| **[Random Quote Generator](./Quote%20of%20the%20moment/index.html)** | A quote generator that fetches inspirational quotes from the [Quotable API](https://quotable.io). Features a developer-inspired dark theme, serif typography for quotes, and a fallback list of quotes when the API is unavailable. Built with vanilla JavaScript. |
+| **[Random Quote Generator](./Day%201/index.html)** | A quote generator that fetches inspirational quotes from the [Quotable API](https://quotable.io). Features a developer-inspired dark theme, serif typography for quotes, and a fallback list of quotes when the API is unavailable. Built with vanilla JavaScript. |
 
 ## Project structure
 
@@ -23,7 +23,7 @@ DailyBuildai.com/
 ├── index.html              # Homepage – lists all projects
 ├── projects.js             # Project metadata (titles, descriptions, URLs)
 ├── README.md               # This file
-└── Quote of the moment/    # Project: Random Quote Generator
+└── Day 1/                  # Project: Random Quote Generator
     ├── index.html          # Quote generator page
     └── quotes.js           # Fallback quotes when API is offline
 ```
