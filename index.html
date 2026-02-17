@@ -87,6 +87,7 @@
       line-height: 1.2;
       margin-bottom: 1rem;
       letter-spacing: -0.02em;
+      white-space: nowrap;
     }
     .hero p {
       font-size: 1.1rem;
@@ -131,6 +132,13 @@
       gap: 1rem;
       margin-bottom: 0.75rem;
     }
+    .project-title-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex: 1;
+      min-width: 0;
+    }
     .project-title {
       font-family: 'Libre Baskerville', serif;
       font-size: 1.35rem;
@@ -146,6 +154,22 @@
       background: rgba(88, 166, 255, 0.15);
       padding: 0.25rem 0.6rem;
       flex-shrink: 0;
+    }
+    .day-badge {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      background: rgba(88, 166, 255, 0.12);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .project-date {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-top: 0.5rem;
     }
     .project-description {
       font-size: 0.95rem;
@@ -203,7 +227,7 @@
     <section class="hero">
       <p class="eyebrow">A growing collection · <span id="project-count">2</span> projects</p>
       <h1>Websites built with AI</h1>
-      <p>Each project is crafted with AI assistance. Click to explore.</p>
+      <p>A portfolio of small web projects—one built each day with AI programming.</p>
     </section>
 
     <div class="projects" id="projects-grid"></div>
@@ -219,16 +243,21 @@
     if (projects.length === 0) {
       grid.innerHTML = '<p class="empty-state">No projects yet. Add entries to projects.js</p>';
     } else {
-      [...projects].reverse().forEach((p) => {
+      [...projects].reverse().forEach((p, i) => {
+        const dayNum = projects.length - i;
         const card = document.createElement('a');
         card.href = p.url;
         card.className = 'project-card';
         card.innerHTML = `
           <div class="project-header">
-            <span class="project-title">${p.title}</span>
+            <div class="project-title-row">
+              <span class="day-badge">Day ${dayNum}</span>
+              <span class="project-title">${p.title}</span>
+            </div>
             <a href="${p.githubUrl}" target="_blank" rel="noopener noreferrer" class="project-badge" onclick="event.stopPropagation();" title="View on GitHub">GitHub</a>
           </div>
           <p class="project-description">${p.description}</p>
+          ${p.date ? `<span class="project-date">${p.date}</span>` : ''}
           <span class="project-meta">Open project</span>
         `;
         grid.appendChild(card);
