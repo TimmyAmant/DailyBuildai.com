@@ -15,6 +15,7 @@ A growing collection of websites built with AI assistance. Each project is craft
 | Project | Description |
 |---------|-------------|
 | **[Random Quote Generator](./Day1/index.html)** | A quote generator with a curated collection of inspirational quotes from around the web. Features a developer-inspired dark theme and serif typography. Built with vanilla JavaScript. |
+| **[Color Palette Generator](./Day2/index.html)** | Generate random 5-color palettes. Click a swatch to copy its hex code, or lock colors you like before generating again. Warm, minimal design. Built with vanilla JavaScript. |
 
 ## Project structure
 
@@ -23,9 +24,11 @@ DailyBuildai.com/
 ├── index.html              # Homepage – lists all projects
 ├── projects.js             # Project metadata (titles, descriptions, URLs)
 ├── README.md               # This file
-└── Day1/                   # Project: Random Quote Generator
-    ├── index.html          # Quote generator page
-    └── quotes.js           # Fallback quotes when API is offline
+├── Day1/                   # Project: Random Quote Generator
+│   ├── index.html          # Quote generator page
+│   └── quotes.js           # Fallback quotes when API is offline
+└── Day2/                   # Project: Color Palette Generator
+    └── index.html          # Palette generator page
 ```
 
 ## How to run locally

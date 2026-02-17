@@ -8,13 +8,12 @@ const projects = [
     githubUrl: 'https://github.com/TimmyAmant/DailyBuildai.com/tree/main/Day1',
     screenshot: null, // Add path like 'screenshots/day1.png' when you have one
   },
-  // Add more projects as you build them:
-  // {
-  //   id: 'day2',
-  //   title: 'Project Name',
-  //   description: 'What it does...',
-  //   url: './Day2/index.html',
-  //   githubUrl: 'https://github.com/TimmyAmant/DailyBuildai.com',
-  //   screenshot: 'screenshots/day2.png',
-  // },
+  {
+    id: 'day2',
+    title: 'Color Palette Generator',
+    description: 'Generate random 5-color palettes. Click a swatch to copy its hex code, or click again to lock it so it stays when you generate a new palette. Built with vanilla JavaScript.',
+    url: 'Day2/',
+    githubUrl: 'https://github.com/TimmyAmant/DailyBuildai.com/tree/main/Day2',
+    screenshot: null,
+  },
 ];
