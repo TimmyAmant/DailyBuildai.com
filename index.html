@@ -201,7 +201,7 @@
 
   <main>
     <section class="hero">
-      <p class="eyebrow">A growing collection</p>
+      <p class="eyebrow">A growing collection · <span id="project-count">2</span> projects</p>
       <h1>Websites built with AI</h1>
       <p>Each project is crafted with AI assistance. Click to explore.</p>
     </section>
@@ -214,14 +214,14 @@
   <script src="projects.js"></script>
   <script>
     const grid = document.getElementById('projects-grid');
+    const countEl = document.getElementById('project-count');
+    if (countEl) countEl.textContent = projects.length;
     if (projects.length === 0) {
       grid.innerHTML = '<p class="empty-state">No projects yet. Add entries to projects.js</p>';
     } else {
-      projects.forEach((p) => {
+      [...projects].reverse().forEach((p) => {
         const card = document.createElement('a');
         card.href = p.url;
-        card.target = '_blank';
-        card.rel = 'noopener noreferrer';
         card.className = 'project-card';
         card.innerHTML = `
           <div class="project-header">
